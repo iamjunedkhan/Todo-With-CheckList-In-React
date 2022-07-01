@@ -5,7 +5,7 @@ export default function EditTodo({todo}) {
   console.log(todo);
   const {handleEditBoxInput,hanldeEditOk} =useContext(context);
     return (
-    <div className='fixed flex justify-center flex-col z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-400 w-4/5 py-9 px-4'  > 
+    <div className='fixed flex justify-center flex-col z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-300 w-4/5 py-9 px-4'  > 
         <h1 className='text-2xl font-bold m-4'>Edit Todo</h1>
         <form action="" onSubmit={(event)=>event.preventDefault()}>
 

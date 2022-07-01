@@ -1,11 +1,11 @@
-import React,{useContext} from 'react'
+import React,{useContext,forwardRef } from 'react'
 import { context } from "./App";
 
 
-export default function Todo({ todo }) {
+const  Todo=forwardRef(({ todo },ref)=> {
     const {handleDelete,changeCheckBox,handleEditPen} =  useContext(context)
     return (
-        <div className='text-xl flex justify-between py-3 px-8 '>
+        <div ref={ref} className={`text-xl ${!todo.status?'bg-red-300':'bg-green-300' } my-2 flex justify-between py-3 px-8 `}>
             <div>
                 <input type="checkbox" defaultChecked={todo.status} onChange={()=>changeCheckBox(todo.id)} className='mr-5' name="" id="" />
                 <span>{todo.title}</span>
@@ -17,4 +17,5 @@ export default function Todo({ todo }) {
         </div>
 
     )
-}
+})
+export default Todo;
